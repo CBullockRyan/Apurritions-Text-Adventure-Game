@@ -1,0 +1,19 @@
+CC=g++
+exe=run
+
+$(exe): Main.o Room.o Haunted.o Temporary.o Regular.o Pack.o
+	$(CC) Main.o Room.o Haunted.o Temporary.o Regular.o Pack.o -o $(exe)
+Main.o: Main.cpp
+	$(CC) -c Main.cpp
+Room.o: Room.cpp
+	$(CC) -c Room.cpp
+Haunted.o: Haunted.cpp
+	$(CC) -c Haunted.cpp
+Temporary.o: Temporary.cpp
+	$(CC) -c Temporary.cpp
+Regular.o: Regular.cpp
+	$(CC) -c Regular.cpp
+Pack.o: Pack.cpp
+	$(CC) -c Pack.cpp
+clean:
+	rm -f a.out $(exe) *.o
